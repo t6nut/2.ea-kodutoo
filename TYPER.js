@@ -148,7 +148,11 @@ TYPER.prototype = {
     // Võrdlen kas meie kirjutatud täht on sama mis järele jäänud sõna esimene
     //console.log(this.word);
     if (letter === this.word.left.charAt(0)) {
-
+      console.log("right");
+      document.body.style.backgroundColor = "green";
+      setTimeout(function background() {
+        document.body.style.backgroundColor = "white";
+      },75);
       // Võtame ühe tähe maha
       this.word.removeFirstLetter();
 
@@ -167,6 +171,12 @@ TYPER.prototype = {
 
       //joonistan uuesti
       this.word.Draw();
+    } else {
+      console.log("wrong");
+      document.body.style.backgroundColor = "red";
+      setTimeout(function background() {
+        document.body.style.backgroundColor = "white";
+      },75);
     }
 
   } // keypress end
